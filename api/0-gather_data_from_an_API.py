@@ -20,15 +20,15 @@ def Employed_todo(employee_id):
     todo_data = todo_response.json()
 
     employee_name = user_data['name']
-    total_tasks = len(todo_data)
-    done_tasks = sum(1 for task in todo_data if task['completed'])
+    total_number_of_task = len(todo_data)
+    number_of_done_tasks = sum(1 for task in todo_data if task['completed'])
     completed_tasks_titles = [task['title']
                               for task in todo_data if task['completed']]
 
-    print(f"Employee {employee_name} "
-          f"is done with tasks({done_tasks}/{total_tasks}):")
-    for title in completed_tasks_titles:
-        print(f"\t{title}")
+    print("Employee {} is done with tasks({}/{}):"
+          .format(employee_name, number_of_done_tasks, total_number_of_task))
+    for task_title in completed_tasks_titles:
+        print("\t {}".format(task_title))
 
 
 if __name__ == "__main__":
