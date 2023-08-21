@@ -8,7 +8,10 @@ import requests
 import sys
 
 
-def Employed_todo(employee_id):
+if __name__ == "__main__":
+
+    employee_id = int(sys.argv[1])
+
     base_url = "https://jsonplaceholder.typicode.com"
     user_url = f"{base_url}/users/{employee_id}"
     todo_url = f"{base_url}/todos?userId={employee_id}"
@@ -29,9 +32,3 @@ def Employed_todo(employee_id):
           .format(employee_name, number_of_done_tasks, total_number_of_task))
     for task_title in completed_tasks_titles:
         print("\t {}".format(task_title))
-
-
-if __name__ == "__main__":
-
-    employee_id = int(sys.argv[1])
-    Employed_todo(employee_id)
