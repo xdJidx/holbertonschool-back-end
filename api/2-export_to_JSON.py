@@ -47,7 +47,7 @@ def Employed_todo(employee_id):
         }
 
     with open(f"{employee_id}.json", 'w') as jsonfile:
-        json.dump(user_tasks_data, jsonfile, indent=4)
+        json.dump(user_tasks_data, jsonfile)
 
     print(f"Tasks saved to {employee_id}.json")
 
